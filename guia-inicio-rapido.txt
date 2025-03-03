@@ -1,0 +1,109 @@
+# Guia de Início Rápido: aFazeres
+
+Este documento contém instruções para configurar e começar a utilizar o sistema de lista de tarefas.
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de que você tenha instalado:
+
+- [Node.js](https://nodejs.org/) (versão 14.x ou superior)
+- [MongoDB](https://www.mongodb.com/try/download/community) (versão 4.4 ou superior)
+- Um editor de código (recomendado: VS Code)
+- Git (opcional, para clonar o repositório)
+
+## Instalação
+
+1. **Clone ou faça download do código:**
+   ```
+   git clone [URL-DO-REPOSITORIO]
+   ```
+   Ou descompacte o arquivo ZIP fornecido em uma pasta de sua escolha.
+
+2. **Navegue até a pasta do projeto:**
+   ```
+   cd [NOME-DA-PASTA-DO-PROJETO]
+   ```
+
+3. **Instale as dependências:**
+   ```
+   npm install
+   ```
+   Isso instalará todas as dependências necessárias listadas no arquivo package.json.
+
+## Configuração do MongoDB
+
+1. **Inicie o serviço MongoDB:**
+   - Windows: O serviço geralmente é iniciado automaticamente após a instalação.
+   - macOS: `brew services start mongodb-community`
+   - Linux: `sudo systemctl start mongod`
+
+2. **Verifique se o MongoDB está rodando:**
+   ```
+   mongo --version
+   ```
+
+3. **Configure a conexão do MongoDB:**
+   - Abra o arquivo de configuração (geralmente `.env` ou um arquivo específico de configuração)
+   - Verifique se a URL de conexão está correta (por padrão: `mongodb://localhost:27017/tarefas`)
+
+## Configuração do JSON Server
+
+1. **Inicie o JSON Server:**
+   ```
+   npm run json-server
+   ```
+   Este comando deve estar configurado no seu package.json para iniciar o JSON Server na porta adequada.
+
+## Execução do projeto
+
+1. **Inicie a aplicação:**
+   ```
+   npm start
+   ```
+
+2. **Acesse o site:**
+   Abra seu navegador e acesse: `http://localhost:3000` (ou a porta configurada em seu projeto)
+
+## Primeiros passos no uso
+
+1. **Registro/Login:**
+   - Caso o sistema exija, crie uma conta ou faça login com suas credenciais.
+
+2. **Criando sua primeira tarefa:**
+   - Clique no botão "Nova Tarefa" ou equivalente.
+   - Preencha o título da tarefa e adicione uma descrição se necessário.
+   - Defina uma data de vencimento (se aplicável).
+   - Salve a tarefa.
+
+3. **Gerenciando tarefas:**
+   - Marque tarefas como concluídas clicando na caixa de seleção.
+   - Edite tarefas clicando no ícone de edição ou no título da tarefa.
+   - Exclua tarefas usando o botão de exclusão.
+   - Organize tarefas usando as funcionalidades de filtro e ordenação.
+
+## Problemas comuns
+
+### Problema de conexão com MongoDB
+- Verifique se o serviço MongoDB está rodando
+- Confirme a URL de conexão no arquivo de configuração
+- Verifique se as credenciais estão corretas (se aplicável)
+
+### API não responde
+- Certifique-se de que o JSON Server está rodando
+- Verifique as portas configuradas para evitar conflitos
+
+### Problemas de interface
+- Limpe o cache do navegador
+- Verifique se todos os arquivos CSS e JavaScript estão sendo carregados corretamente
+
+## Recursos adicionais
+
+- Documentação do MongoDB: [mongodb.com/docs](https://www.mongodb.com/docs/)
+- Documentação do JSON Server: [github.com/typicode/json-server](https://github.com/typicode/json-server)
+- Documentação do Node.js: [nodejs.org/docs](https://nodejs.org/en/docs/)
+
+## Suporte
+
+Se você encontrar problemas não cobertos neste guia, entre em contato através de:
+- Email: [seu-email@exemplo.com]
+- Repositório do projeto: [URL-DO-REPOSITORIO]/issues
