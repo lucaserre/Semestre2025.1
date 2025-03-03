@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    
+    <div class="container">
+        <h1>aFazeres</h1>
+        
+        <!-- Visualização em grade para as collections -->
+        <div class="collections-grid" id="collectionsGrid">
+            <!-- Collections serão adicionadas aqui pelo JavaScript -->
+        </div>
+        
+        <!-- Conteúdo de tarefas (inicialmente oculto) -->
+        <div class="content" id="tasksContent" style="display: none;">
+            <div class="collection-header">
+                <button class="back-button" id="backButton">← Voltar</button>
+                <div class="collection-title">
+                    <div class="active-color-dot" id="activeColorDot"></div>
+                    <span id="collectionTitle">Tarefas</span>
+                </div>
+                <div class="collection-actions">
+                    <button class="collection-action-button" id="editCollectionButton" title="Editar">✏️</button>
+                    <button class="collection-action-button" id="deleteCollectionButton" title="Excluir">🗑️</button>
+                </div>
+            </div>
+
+            <div class="reset-switch-container">
+                <span>Reset diário:</span>
+                <label class="reset-switch">
+                    <input type="checkbox" id="resetDailySwitch">
+                    <span class="reset-slider"></span>
+                </label>
+            </div>
+            
+            <div class="task-form">
+                <input type="text" class="task-input" placeholder="Adicionar nova tarefa...">
+                <button class="add-button">Adicionar</button>
+            </div>
+            
+            <ul class="task-list">
+                <!-- Tarefas serão adicionadas aqui pelo JavaScript -->
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Modal para criar/editar lista -->
+    <div class="modal" id="collectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Nova Lista de Tarefas</div>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="listName">Nome da Lista:</label>
+                <input type="text" id="listName" placeholder="Ex: Projetos, Compras, Viagem...">
+            </div>
+            <div class="form-group">
+                <label for="collectionName">Nome da Collection (sem espaços):</label>
+                <input type="text" id="collectionName" placeholder="Ex: projetos, compras, viagem...">
+            </div>
+            <div class="form-group">
+                <label>Cor:</label>
+                <div class="color-options" id="colorOptions">
+                    <!-- Cores serão adicionadas aqui pelo JavaScript -->
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button class="cancel-button">Cancelar</button>
+                <button class="save-button" id="saveCollectionButton">Salvar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de confirmação para exclusão -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content confirm-modal">
+            <div class="modal-header">
+                <div class="modal-title">Confirmação</div>
+                <button class="close-button">&times;</button>
+            </div>
+            <p>Tem certeza que deseja excluir esta lista? Todas as tarefas serão perdidas permanentemente.</p>
+            <div class="confirm-actions">
+                <button class="cancel-button">Cancelar</button>
+                <button class="delete-button-modal" id="confirmDeleteButton">Excluir</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
